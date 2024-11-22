@@ -34,15 +34,17 @@ window.addEventListener("load", function() {
 //	console.log("Play Video");
 //})
 document.querySelector("#play").addEventListener("click", function() {
-	console.log("Play Video");
+	
 	video.play();
 	document.querySelector("#volume").innerHTML = document.querySelector("#slider").value + "%";
+	console.log("Play Video");
 });
 
 
 document.querySelector("#pause").addEventListener("click", function() {
-	video.pause();
+	
 	console.log("Pause Video");
+	video.pause();
 })
 
 // Slow down by 10%
@@ -105,6 +107,24 @@ document.querySelector("#skip").addEventListener("click", function() {
 // 	this.textContent = newText;
 // })
 
+// changing vol
+document.querySelector("#slider").addEventListener("change", function() {
+	video.volume = this.value / 100;
+	document.querySelector("#volume").innerHTML = this.value + "%";
+});
+
+// styling vid
+document.querySelector("#vintage").addEventListener("click", function() {
+	console.log("Changing to vintage");
+	video.classList.add("oldSchool");
+});
+
+// removing style
+document.querySelector("#orig").addEventListener("click", function() {
+	video.classList.remove("oldSchool");
+	console.log("Changed to original");
+});
+
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted) {
 		video.muted = false;
@@ -114,28 +134,6 @@ document.querySelector("#mute").addEventListener("click", function() {
 		document.querySelector("#mute").innerHTML = "Unmute";
 	}
 });
-
-
-
-
-// change volume and update volume info
-document.querySelector("#slider").addEventListener("change", function() {
-	video.volume = this.value / 100;
-	document.querySelector("#volume").innerHTML = this.value + "%";
-});
-
-// style the video element
-document.querySelector("#vintage").addEventListener("click", function() {
-	console.log("Changing to vintage");
-	video.classList.add("oldSchool");
-});
-
-// remove style from video element
-document.querySelector("#orig").addEventListener("click", function() {
-	console.log("Changing to original");
-	video.classList.remove("oldSchool");
-});
-
 
 
 
