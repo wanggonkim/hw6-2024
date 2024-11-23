@@ -1,6 +1,12 @@
 // let video;
 // let volumeSlider;
-var video = document.querySelector("#player1");
+let video = document.querySelector("#player1");
+let volumeSlider = document.querySelector("#slider");
+
+
+
+
+// var video = document.querySelector("#player1");
 //window.addEventListener("load", function() {
 //	console.log("Good job opening the window");
 //	video = document.querySelector("#player1");
