@@ -117,6 +117,8 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("change", function() {
 	video.volume = this.value / 100;
 	document.querySelector("#volume").innerHTML = this.value + "%";
+	console.log("Volume is " + this.value); //added this to see the volume
+	
 });
 
 // styling vid
